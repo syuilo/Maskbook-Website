@@ -2,10 +2,14 @@
 @import "./sprite-brand-logos";
 @import "./sprite-subculture";
 
-$desktop-width: 1050px + (30px * 2);
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
+
+$desktop-width: 1280px;
 $tablet-width: 960px;
 $mobile-width: 580px;
-$specific-font: -apple-system, system-ui, BlinkMacSystemFont, Roboto, "Segoe UI", Ubuntu, "Helvetica Neue", Arial, sans-serif;
+$specific-font: "DM Sans", -apple-system, system-ui, BlinkMacSystemFont, Roboto, "Segoe UI", Ubuntu, "Helvetica Neue", Arial, sans-serif;
+
+$theme-color: #3333ff;
 
 * {
   box-sizing: border-box;
@@ -13,9 +17,6 @@ $specific-font: -apple-system, system-ui, BlinkMacSystemFont, Roboto, "Segoe UI"
 
 body {
   font-family: $specific-font;
-  margin: 0 auto;
-
-  width: $desktop-width;
   font-size: 16px;
 
   &.no-scroll {
@@ -32,127 +33,81 @@ a {
   }
 }
 
-.link-button {
-  font-family: $specific-font;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff !important;
-  border-radius: 6px;
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 64px;
-  background-color: #1c68f3;
+.line {
+  height: 128px;
+  width: 4px;
+  margin: 0 auto;
+  background: $theme-color;
 }
 
-.link-button-outlined {
-  display: inline-block;
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 1.78;
-  text-align: center;
-  border-radius: 6px;
-  border: 1px solid #1c68f3;
-  padding: 8px 0;
-  color: #1c68f3 !important;
-  background-color: #fff;
-}
-
-.text-secondary {
-  color: #939393 !important;
-  font-size: 14px !important;
-  line-height: 1.75 !important;
-}
-
-.site-section {
-  margin: 64px auto 160px;
-  width: 100%;
-  position: relative;
-
-  &.collapsed {
-    margin-top: 0;
-    margin-bottom: 0;
+.navbar.wide {
+  @media (max-width: $desktop-width) {
+    display: none;
   }
 
-  &-title {
-    text-align: center;
-    color: #5d6f88;
-    font-size: 40px;
-    font-weight: 500;
-    line-height: 1.2;
-    letter-spacing: -0.4px;
-    margin: 32px;
+  font-size: 1.25em;
+  font-weight: bold;
 
-    &.small {
-      font-size: 16px;
-      font-weight: normal;
-      line-height: 1.75;
-    }
-  }
-
-  &-description {
-    text-align: center;
-    color: #605f5f;
-    font-size: 24px;
-    line-height: 34px;
-    margin: 32px 0;
-  }
-}
-
-.navbar {
-  .site-section-body {
-    position: relative;
-    z-index: 1000;
-
+  > .body {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    max-width: $desktop-width;
+    margin: 0 auto;
+    padding: 32px;
 
-    height: 88px;
-  }
+    > nav {
+      margin-left: auto;
 
-  &-brand {
-    width: 132px;
-    height: 40px;
+      > a {
+        display: inline-block;
+        width: 9em;
+        padding: 16px 0;
+        text-align: center;
 
-    user-select: none;
-
-    color: transparent;
-  }
-
-  &-nav a {
-    font-size: 14px;
-    line-height: 40px;
-
-    float: left;
-
-    color: #3b3b3b;
-    &:not(:first-child) {
-      margin-left: 40px;
-    }
-    &.link-button {
-      width: 140px;
+        &.install {
+          color: $theme-color;
+          border: 1px solid $theme-color;
+          border-radius: 6px;
+        }
+      }
     }
   }
+}
 
-  &-toggler {
+.navbar.narrow {
+  @media (min-width: $desktop-width) {
     display: none;
-    border: none;
-    outline: none;
-    background: transparent;
+  }
 
-    &-icon {
-      display: block;
+  > .body {
+    display: flex;
+    align-items: center;
+    max-width: $desktop-width;
+    margin: 0 auto;
 
-      width: 24px;
-      height: 24px;
-
-      background: url(./icons/navbar-toggle-open.svg) no-repeat center;
-      background-size: 100% 100%;
+    > *:last-child {
+      margin-left: auto;
     }
 
-    &.open &-icon {
-      background-image: url(./icons/navbar-toggle-close.svg);
+    > .toggler {
+      display: none;
+      border: none;
+      outline: none;
+      background: transparent;
+
+      &-icon {
+        display: block;
+
+        width: 24px;
+        height: 24px;
+
+        background: url(./icons/navbar-toggle-open.svg) no-repeat center;
+        background-size: 100% 100%;
+      }
+
+      &.open &-icon {
+        background-image: url(./icons/navbar-toggle-close.svg);
+      }
     }
   }
 }
@@ -160,6 +115,8 @@ a {
 .install {
   margin-top: 0;
   margin-bottom: 0;
+  text-align: center;
+  padding: 0 0 64px 0;
 
   .site-section-body {
     display: flex;
@@ -179,7 +136,6 @@ a {
   }
 
   .description {
-    width: 720px;
     height: auto;
   }
 
@@ -190,40 +146,38 @@ a {
   }
 
   .headline {
-    font-size: 60px;
-    font-weight: 500;
-    line-height: 70px;
-
-    margin: 0;
-    margin-bottom: 64px;
-
+    font-size: 6em;
+    font-weight: bold;
+    margin: 64px 0 32px 0;
     letter-spacing: -0.4px;
-
-    color: #5d6f88;
+    color: #000;
   }
 
   .subline {
-    font-size: 30px;
+    font-size: 2em;
     line-height: 37px;
 
     margin: 0;
-    margin-bottom: 164px;
+    margin-bottom: 54px;
 
     letter-spacing: -0.4px;
 
-    color: #605f5f;
+    color: #000;
   }
 
   .open-store {
-    display: flex;
-    align-items: center;
-
     .link-button {
-      border-radius: 12px;
-      box-shadow: 0px 2px 8px rgba(28, 104, 243, 0.04), 0px 16px 24px rgba(28, 104, 243, 0.16);
+      display: block;
+      font-family: $specific-font;
+      color: #fff !important;
+      font-size: 2em;
+      font-weight: 500;
+      line-height: 64px;
+      background-color: $theme-color;
+      border-radius: 6px;
 
-      width: 292px;
-      margin-right: 32px;
+      width: 20em;
+      margin: 0 auto;
 
       &::before {
         display: inline-block;
@@ -242,9 +196,10 @@ a {
     .link-description {
       font-size: 20px;
       line-height: 30px;
+      text-align: center;
+      margin-top: 24px;
 
       display: block;
-      float: left;
 
       color: #5d6f88;
     }
@@ -252,39 +207,27 @@ a {
 }
 
 .core-feature {
+  max-width: $desktop-width;
+  margin: 0 auto;
+
   .step-scroller {
     width: 100%;
+    margin-top: 92px;
     display: flex;
     justify-content: space-between;
 
     .step {
-      display: flex;
-      align-items: center;
-      width: 350px;
-      height: 186px;
-      box-shadow: 0px 2px 4px rgba(40, 41, 61, 0.04), 0px 8px 16px rgba(96, 97, 112, 0.16);
-      border-radius: 12px;
-      padding: 48px 24px 70px 30px;
       position: relative;
+      width: 352px;
 
-      counter-increment: step;
-
-      &:before {
-        color: #5d6f88;
-        letter-spacing: -0.7px;
-        float: left;
-        font-size: 60px;
-        font-weight: 500;
-        line-height: 70px;
-        margin-right: 30px;
-        content: counter(step);
+      > img {
+        margin: 24px 0 16px 0;
       }
 
       &-title {
-        color: #3b3b3b;
-        font-weight: 300;
-        font-size: 24px;
-        line-height: 34px;
+        color: #000;
+        font-weight: bold;
+        font-size: 2.7em;
         margin: 0;
 
         a {
@@ -295,70 +238,54 @@ a {
 
       &-tip {
         margin: 0;
-        color: #605f5f;
-        font-weight: 300;
-        line-height: 1.75;
-        text-align: center;
-        left: 0;
-        right: 0;
-        bottom: 16px;
-        position: absolute;
+        text-align: left;
+        font-size: 1.7em;
       }
     }
+  }
+
+  .site-section-title {
+    text-align: center;
+    font-size: 9em;
+  }
+
+  .site-section-header {
+    b {
+      color: #00f;
+    }
+  }
+
+  .site-section-description {
+    text-align: center;
+    font-size: 2em;
+    margin: 2em 0 3em 0;
   }
 
   .site-section-body {
     display: flex;
     justify-content: space-between;
   }
-
-  .site-section-footer {
-    text-align: center;
-    padding: 48px 0;
-
-    a {
-      color: #1c68f3;
-      font-size: 24px;
-      line-height: 34px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      &::before,
-      &::after {
-        content: "";
-        width: 32px;
-        height: 32px;
-        display: inline-block;
-        background-size: contain;
-        background-repeat: no-repeat;
-      }
-
-      &::before {
-        width: 32px;
-        height: 32px;
-        margin-right: 16px;
-        background-image: url(./icons/github.svg);
-      }
-      &::after {
-        width: 24px;
-        height: 18px;
-        margin-left: 16px;
-
-        background-image: url(./icons/arrow-right.svg);
-      }
-    }
-  }
 }
 
 .ability {
-  .site-section-body {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
+  background: #3333ff;
+  color: #fff;
+  margin-top: 128px;
+
+  .site-section-header {
+    text-align: center;
     max-width: $desktop-width;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
+
+    .site-section-title {
+      font-size: 7em;
+      padding: 92px 64px;
+    }
+  }
+
+  .site-section-body {
+    max-width: $desktop-width;
+    margin: 0 auto;
   }
 
   .aspect {

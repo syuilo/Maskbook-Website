@@ -314,7 +314,7 @@ a {
 
       > div {
         width: 50%;
-        height: 22em;
+        height: 25em;
         display: flex;
 
         &:first-child {
@@ -352,8 +352,17 @@ a {
         }
 
         > div {
-          max-width: 36em;
+          max-width: 600px;
           margin: auto;
+          padding: 32px 64px;
+        }
+      }
+
+      @media (max-width: 850px) {
+        display: block;
+
+        > div {
+          width: 100%;
         }
       }
     }

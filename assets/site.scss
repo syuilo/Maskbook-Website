@@ -337,6 +337,18 @@ a {
         &:last-child {
           background: #000057;
           color: #fff;
+
+          > div {
+            > h3 {
+              font-size: 1.3em;
+              margin: 1em 0 0 0;
+            }
+
+            > p {
+              font-size: 1.3em;
+              margin: 0.8em 0 0 0;
+            }
+          }
         }
 
         > div {

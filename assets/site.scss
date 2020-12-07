@@ -247,6 +247,16 @@ a {
   .site-section-title {
     text-align: center;
     font-size: 9em;
+    margin: 32px 0;
+
+    > *:nth-child(2) {
+      margin: -0.1em 0 -0.3em 0;
+      font-size: 140%;
+    }
+
+    > *:nth-child(4) {
+      font-size: 80%;
+    }
   }
 
   .site-section-header {
@@ -265,27 +275,76 @@ a {
     display: flex;
     justify-content: space-between;
   }
+
+  .illust {
+    display: block;
+    margin: 0 auto 82px auto;
+  }
 }
 
 .ability {
-  background: #3333ff;
-  color: #fff;
   margin-top: 128px;
 
   .site-section-header {
     text-align: center;
-    max-width: $desktop-width;
-    margin: 0 auto;
+    background: #3333ff;
+    color: #fff;
 
     .site-section-title {
       font-size: 7em;
       padding: 92px 64px;
+      max-width: $desktop-width;
+      margin: 0 auto;
     }
   }
 
   .site-section-body {
-    max-width: $desktop-width;
-    margin: 0 auto;
+    > div {
+      display: flex;
+
+      &:nth-child(even) {
+        > div:first-child {
+          order: 2;
+        }
+
+        > div:last-child {
+          order: 1;
+        }
+      }
+
+      > div {
+        width: 50%;
+        height: 22em;
+        display: flex;
+
+        &:first-child {
+          > div {
+            font-size: 2.3em;
+            font-weight: bold;
+
+            > p {
+              color: $theme-color;
+              margin: 1em 0 0 0;
+
+              > b {
+                display: block;
+                color: #ff8686;
+              }
+            }
+          }
+        }
+
+        &:last-child {
+          background: #000057;
+          color: #fff;
+        }
+
+        > div {
+          max-width: 36em;
+          margin: auto;
+        }
+      }
+    }
   }
 
   .aspect {

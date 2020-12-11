@@ -505,6 +505,40 @@ a {
   }
 }
 
+.faq {
+  background: #ebebff;
+
+  > .body {
+    max-width: $desktop-width;
+    margin: 0 auto;
+    padding: 92px 64px 64px 64px;
+
+    > h2 {
+      font-size: 4em;
+      font-weight: bold;
+      margin: 0 0 64px 0;
+    }
+
+    > .faqs {
+      display: flex;
+
+      > div {
+        width: 50%;
+
+        > div {
+          font-size: 1.75em;
+          margin: 1em 0;
+          padding: 0 1.5em;
+
+          background-image: url("./icons/Ellipse 15.svg");
+          background-repeat: no-repeat;
+          background-position: 0 0.4em;
+        }
+      }
+    }
+  }
+}
+
 .principle {
   text-align: center;
   padding-top: 32px;

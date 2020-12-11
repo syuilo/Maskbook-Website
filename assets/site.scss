@@ -539,6 +539,83 @@ a {
   }
 }
 
+.partners {
+  > .body {
+    max-width: $desktop-width;
+    margin: 0 auto;
+    padding: 92px 64px 64px 64px;
+    text-align: center;
+
+    > h2 {
+      font-size: 3em;
+      font-weight: bold;
+      margin: 0 0 64px 0;
+    }
+
+    .logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      margin: 32px 0;
+
+      a {
+        font-size: 36px;
+        line-height: 40px;
+
+        display: inline-block;
+
+        height: 40px;
+
+        user-select: none;
+
+        color: transparent;
+        background: no-repeat center;
+        background-size: 100%;
+        &:not(:first-child) {
+          margin-left: 32px;
+        }
+      }
+
+      a[title="arweave"] {
+        width: 180px;
+        background-image: url(./icons/arweave.svg);
+      }
+      a[title="ChainIDE"] {
+        background-image: url(./icons/chain-ide.png) !important;
+      }
+      a[title="gun"] {
+        background-image: url(./icons/gun.svg);
+      }
+      a[title="maker"] {
+        width: 160px;
+        background-image: url(./icons/maker.svg);
+      }
+      a[title="web3bootcamp"] {
+        width: 100px;
+        height: 40px;
+        background-image: url(./icons/web30-bootcamp.svg);
+      }
+      a[title="okb"] {
+        opacity: 0.5;
+        width: 45px;
+        height: 46px;
+        background-image: url(./icons/okb.svg);
+      }
+      a[title="HashKey"] {
+        opacity: 0.4;
+        width: 110px;
+        background-image: url(./icons/hash-key.jpg);
+      }
+      a[title="Gitcoin"] {
+        opacity: 0.4;
+        width: 40px;
+        background-image: url(./icons/gitcoin.png);
+      }
+    }
+  }
+}
+
 .principle {
   text-align: center;
   padding-top: 32px;
@@ -582,70 +659,6 @@ a {
       line-height: 1.75;
       display: block;
       color: #3b3b3b;
-    }
-  }
-}
-
-.partners {
-  .site-section-body {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin: 32px 0;
-
-    a {
-      font-size: 36px;
-      line-height: 40px;
-
-      display: inline-block;
-
-      height: 40px;
-
-      user-select: none;
-
-      color: transparent;
-      background: no-repeat center;
-      background-size: 100%;
-      &:not(:first-child) {
-        margin-left: 32px;
-      }
-    }
-
-    a[title="arweave"] {
-      width: 180px;
-      background-image: url(./icons/arweave.svg);
-    }
-    a[title="ChainIDE"] {
-      background-image: url(./icons/chain-ide.png) !important;
-    }
-    a[title="gun"] {
-      background-image: url(./icons/gun.svg);
-    }
-    a[title="maker"] {
-      width: 160px;
-      background-image: url(./icons/maker.svg);
-    }
-    a[title="web3bootcamp"] {
-      width: 100px;
-      height: 40px;
-      background-image: url(./icons/web30-bootcamp.svg);
-    }
-    a[title="okb"] {
-      opacity: 0.5;
-      width: 45px;
-      height: 46px;
-      background-image: url(./icons/okb.svg);
-    }
-    a[title="HashKey"] {
-      opacity: 0.4;
-      width: 110px;
-      background-image: url(./icons/hash-key.jpg);
-    }
-    a[title="Gitcoin"] {
-      opacity: 0.4;
-      width: 40px;
-      background-image: url(./icons/gitcoin.png);
     }
   }
 }

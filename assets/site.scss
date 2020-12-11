@@ -314,7 +314,7 @@ a {
 
       > div {
         width: 50%;
-        height: 25em;
+        height: 30em;
         display: flex;
 
         &:first-child {
@@ -363,6 +363,12 @@ a {
 
         > div {
           width: 100%;
+        }
+      }
+
+      @media (max-width: 1300px) {
+        > div {
+          height: 25em;
         }
       }
     }

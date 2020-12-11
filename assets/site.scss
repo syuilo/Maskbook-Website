@@ -374,6 +374,47 @@ a {
     }
   }
 
+  .site-section-footer {
+    text-align: center;
+    background: #3333ff;
+    color: #fff;
+    padding: 92px 64px;
+
+    .site-section-title {
+      font-size: 2.75em;
+      margin: 0;
+      margin-bottom: 32px;
+    }
+
+    .open-store {
+      .link-button {
+        display: block;
+        font-family: $specific-font;
+        color: $theme-color;
+        font-size: 2em;
+        font-weight: bold;
+        line-height: 64px;
+        background-color: #fff;
+        border-radius: 6px;
+
+        width: 20em;
+        margin: 0 auto;
+      }
+
+      .link-description {
+        font-size: 20px;
+        line-height: 30px;
+        text-align: center;
+        margin-top: 24px;
+
+        display: block;
+
+        color: #fff;
+        opacity: 0.65;
+      }
+    }
+  }
+
   .aspect {
     width: 540px;
     height: 250px;

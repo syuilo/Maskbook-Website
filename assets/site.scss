@@ -541,15 +541,15 @@ a {
 
 .partners {
   > .body {
-    max-width: $desktop-width;
+    max-width: 54rem;
     margin: 0 auto;
-    padding: 92px 64px 64px 64px;
+    padding: 92px 64px 92px 64px;
     text-align: center;
 
     > h2 {
-      font-size: 3em;
+      font-size: 2.7em;
       font-weight: bold;
-      margin: 0 0 64px 0;
+      margin: 0 0 20px 0;
     }
 
     .logos {
@@ -557,7 +557,7 @@ a {
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      margin: 32px 0;
+      margin: 0;
 
       a {
         font-size: 36px;
@@ -572,6 +572,7 @@ a {
         color: transparent;
         background: no-repeat center;
         background-size: 100%;
+        margin-top: 64px;
         &:not(:first-child) {
           margin-left: 32px;
         }
@@ -612,6 +613,21 @@ a {
         width: 40px;
         background-image: url(./icons/gitcoin.png);
       }
+    }
+  }
+}
+
+.alicebob {
+  background: $theme-color;
+  color: #fff;
+
+  > .body {
+    max-width: $desktop-width;
+    margin: 0 auto;
+    padding: 64px;
+
+    > .text {
+      font-size: 1.5em;
     }
   }
 }

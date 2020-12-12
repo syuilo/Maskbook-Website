@@ -664,6 +664,122 @@ a {
   }
 }
 
+.footer {
+  > .body {
+    max-width: $desktop-width;
+    margin: 0 auto;
+    padding: 74px 0 58px 0;
+    display: flex;
+
+    > .main {
+      flex: 1;
+
+      > p {
+        margin: 0;
+        font-size: 1.6em;
+        opacity: 0.5;
+      }
+
+      > section {
+        margin-top: 52px;
+
+        > h3 {
+          margin: 0 0 32px 0;
+          font-size: 1.6em;
+          opacity: 0.5;
+        }
+
+        form {
+          display: flex;
+
+          width: 500px;
+          height: 62px;
+
+          input[type="email"],
+          button[type="submit"] {
+            border: 1px solid $theme-color;
+          }
+          input[type="email"] {
+            flex: 1;
+
+            padding: 9px 24px;
+
+            border-right: none;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+            outline: none;
+            font-size: 1.5em;
+          }
+          button[type="submit"] {
+            width: 180px;
+            border-color: $theme-color;
+            border-radius: 0 2px 2px 0;
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+            outline: none;
+            background: $theme-color;
+            color: #fff;
+            font-size: 1.5em;
+          }
+        }
+
+        > nav {
+          display: flex;
+          margin-top: 32px;
+          a {
+            display: block;
+
+            width: 32px;
+            height: 32px;
+
+            &:not(:first-child) {
+              margin-left: 32px;
+            }
+
+            @each $name in "facebook", "twitter", "github", "telegram", "discord" {
+              &[href*="#{$name}"] {
+                background-image: url("./icons/media-#{$name}.svg");
+                background-size: 100% 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    > .sub {
+      width: 200px;
+      font-size: 1.6em;
+      opacity: 0.5;
+
+      > .about {
+        > h4 {
+          margin: 0;
+        }
+
+        > a {
+          display: block;
+          margin: 32px 0;
+        }
+      }
+    }
+  }
+
+  > .body2 {
+    max-width: $desktop-width;
+    margin: 0 auto;
+    border-top: solid 1px #ddd;
+    text-align: center;
+
+    > p {
+      margin: 0;
+      padding: 48px;
+      opacity: 0.5;
+      font-size: 1.5em;
+    }
+  }
+}
+
 .principle {
   text-align: center;
   padding-top: 32px;

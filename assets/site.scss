@@ -33,7 +33,7 @@ a {
   }
 }
 
-.line {
+._line {
   height: 128px;
   width: 4px;
   margin: 0 auto;
@@ -624,10 +624,38 @@ a {
   > .body {
     max-width: $desktop-width;
     margin: 0 auto;
-    padding: 64px;
+    padding: 0 64px;
 
     > .text {
+      display: block;
+      padding: 32px 72px;
       font-size: 1.5em;
+    }
+
+    > .top {
+      height: 100px;
+      text-align: left;
+
+      > .line {
+        display: inline-block;
+        height: inherit;
+        width: 220px;
+        border-bottom: solid 1px #fff;
+        vertical-align: bottom;
+      }
+    }
+
+    > .bottom {
+      height: 100px;
+      text-align: right;
+
+      > .line {
+        display: inline-block;
+        height: inherit;
+        width: 220px;
+        border-top: solid 1px #fff;
+        vertical-align: top;
+      }
     }
   }
 }

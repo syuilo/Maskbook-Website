@@ -11,6 +11,14 @@ $specific-font: "DM Sans", -apple-system, system-ui, BlinkMacSystemFont, Roboto,
 
 $theme-color: #3333ff;
 
+:root {
+  --width: 1280px;
+
+  @media (max-width: 600px) {
+    --width: calc(100% - 64px);
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -51,7 +59,7 @@ a {
   > .body {
     display: flex;
     align-items: center;
-    max-width: $desktop-width;
+    max-width: var(--width);
     margin: 0 auto;
     padding: 32px;
 
@@ -82,7 +90,7 @@ a {
   > .body {
     display: flex;
     align-items: center;
-    max-width: $desktop-width;
+    max-width: var(--width);
     margin: 0 auto;
 
     > *:last-child {
@@ -113,6 +121,8 @@ a {
 }
 
 .install {
+  max-width: var(--width);
+  margin: 0 auto;
   margin-top: 0;
   margin-bottom: 0;
   text-align: center;
@@ -151,6 +161,10 @@ a {
     margin: 64px 0 32px 0;
     letter-spacing: -0.4px;
     color: #000;
+
+    @media (max-width: 600px) {
+      font-size: 2.3em;
+    }
   }
 
   .subline {
@@ -163,6 +177,11 @@ a {
     letter-spacing: -0.4px;
 
     color: #000;
+
+    @media (max-width: 600px) {
+      font-size: 1.2em;
+      line-height: 1.2;
+    }
   }
 
   .open-store {
@@ -176,21 +195,9 @@ a {
       background-color: $theme-color;
       border-radius: 6px;
 
-      width: 20em;
+      width: 100%;
+      max-width: 20em;
       margin: 0 auto;
-
-      &::before {
-        display: inline-block;
-        width: 28px;
-        height: 28px;
-        margin-right: 8px;
-
-        content: "";
-        vertical-align: middle;
-
-        background: url(./icons/download.svg) no-repeat center;
-        background-size: contain;
-      }
     }
 
     .link-description {
@@ -202,21 +209,26 @@ a {
       display: block;
 
       color: #5d6f88;
+
+      @media (max-width: 600px) {
+        font-size: 1em;
+        line-height: 1.2;
+      }
     }
   }
 }
 
 .core-feature {
-  max-width: $desktop-width;
+  max-width: var(--width);
   margin: 0 auto;
 
-  .step-scroller {
+  .steps {
     width: 100%;
     margin-top: 92px;
     display: flex;
     justify-content: space-between;
 
-    .step {
+    > .step {
       position: relative;
       width: 352px;
 
@@ -224,7 +236,7 @@ a {
         margin: 24px 0 16px 0;
       }
 
-      &-title {
+      > .title {
         color: #000;
         font-weight: bold;
         font-size: 2.7em;
@@ -236,10 +248,27 @@ a {
         }
       }
 
-      &-tip {
+      > .tip {
         margin: 0;
         text-align: left;
         font-size: 1.7em;
+      }
+    }
+
+    @media (max-width: 600px) {
+      display: block;
+
+      > .step {
+        width: 100%;
+
+        &:not(:last-child) {
+          margin-bottom: 72px;
+        }
+
+        > .tip {
+          font-size: 1.35em;
+          line-height: 1.3;
+        }
       }
     }
   }
@@ -257,6 +286,10 @@ a {
     > *:nth-child(4) {
       font-size: 80%;
     }
+
+    @media (max-width: 600px) {
+      font-size: 4em;
+    }
   }
 
   .site-section-header {
@@ -269,6 +302,11 @@ a {
     text-align: center;
     font-size: 2em;
     margin: 2em 0 3em 0;
+
+    @media (max-width: 600px) {
+      font-size: 1.35em;
+      line-height: 1.3;
+    }
   }
 
   .site-section-body {
@@ -279,6 +317,7 @@ a {
   .illust {
     display: block;
     margin: 0 auto 82px auto;
+    max-width: 100%;
   }
 }
 
@@ -293,8 +332,13 @@ a {
     .site-section-title {
       font-size: 7em;
       padding: 92px 64px;
-      max-width: $desktop-width;
+      max-width: var(--width);
       margin: 0 auto;
+
+      @media (max-width: 600px) {
+        font-size: 2em;
+        padding: 64px 0;
+      }
     }
   }
 
@@ -380,10 +424,18 @@ a {
     color: #fff;
     padding: 92px 64px;
 
+    @media (max-width: 600px) {
+      padding: 64px 32px;
+    }
+
     .site-section-title {
       font-size: 2.75em;
       margin: 0;
       margin-bottom: 32px;
+
+      @media (max-width: 600px) {
+        font-size: 1.8em;
+      }
     }
 
     .open-store {
@@ -396,8 +448,8 @@ a {
         line-height: 64px;
         background-color: #fff;
         border-radius: 6px;
-
-        width: 20em;
+        width: 100%;
+        max-width: 20em;
         margin: 0 auto;
       }
 
@@ -411,6 +463,11 @@ a {
 
         color: #fff;
         opacity: 0.65;
+
+        @media (max-width: 600px) {
+          font-size: 1em;
+          line-height: 1.3;
+        }
       }
     }
   }
@@ -458,7 +515,7 @@ a {
 }
 
 .meme-away {
-  max-width: $desktop-width;
+  max-width: var(--width);
   margin: 0 auto;
   padding: 92px 64px 64px 64px;
 
@@ -509,7 +566,7 @@ a {
   background: #ebebff;
 
   > .body {
-    max-width: $desktop-width;
+    max-width: var(--width);
     margin: 0 auto;
     padding: 92px 64px 64px 64px;
 
@@ -622,7 +679,7 @@ a {
   color: #fff;
 
   > .body {
-    max-width: $desktop-width;
+    max-width: var(--width);
     margin: 0 auto;
     padding: 0 64px;
 
@@ -666,7 +723,7 @@ a {
 
 .footer {
   > .body {
-    max-width: $desktop-width;
+    max-width: var(--width);
     margin: 0 auto;
     padding: 74px 0 58px 0;
     display: flex;
@@ -766,7 +823,7 @@ a {
   }
 
   > .body2 {
-    max-width: $desktop-width;
+    max-width: var(--width);
     margin: 0 auto;
     border-top: solid 1px #ddd;
     text-align: center;
@@ -946,7 +1003,7 @@ footer {
   border-top: 1px solid #eaeaea;
 
   .description {
-    max-width: $desktop-width;
+    max-width: var(--width);
     margin: 0 auto;
   }
 
@@ -966,6 +1023,3 @@ footer {
     }
   }
 }
-
-@import "./site-tablet";
-@import "./site-mobile";

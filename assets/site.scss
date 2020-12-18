@@ -402,17 +402,55 @@ a {
         }
       }
 
+      @media (max-width: 1300px) {
+        > div {
+          height: 25em;
+        }
+      }
+
       @media (max-width: 850px) {
         display: block;
 
         > div {
           width: 100%;
-        }
-      }
+          height: auto;
 
-      @media (max-width: 1300px) {
-        > div {
-          height: 25em;
+          &:first-child {
+            > div {
+              font-size: 1.5em;
+
+              > p {
+                margin: 0.5em 0 0 0;
+
+                > b {
+                }
+              }
+
+              > img {
+                width: 55px;
+              }
+            }
+          }
+
+          &:last-child {
+            > div {
+              > h3 {
+                font-size: 1.1em;
+              }
+
+              > p {
+                font-size: 1.1em;
+              }
+
+              > img {
+                width: 35px;
+              }
+            }
+          }
+
+          > div {
+            margin: 0;
+          }
         }
       }
     }
@@ -519,11 +557,19 @@ a {
   margin: 0 auto;
   padding: 92px 64px 64px 64px;
 
+  @media (max-width: 600px) {
+    padding: 48px 16px;
+  }
+
   > .body {
     > h2 {
       font-size: 3.5em;
       font-weight: bold;
       margin: 0 0 32px 0;
+
+      @media (max-width: 600px) {
+        font-size: 2em;
+      }
     }
 
     > p {
@@ -531,6 +577,10 @@ a {
 
       b {
         color: $theme-color;
+      }
+
+      @media (max-width: 600px) {
+        font-size: 1.2em;
       }
     }
   }
@@ -540,10 +590,19 @@ a {
     white-space: nowrap;
     overflow: hidden;
 
+    @media (max-width: 600px) {
+      margin-top: 48px;
+    }
+
     .card {
       display: inline-block;
       width: 400px;
       height: 300px;
+
+      @media (max-width: 600px) {
+        width: 160px;
+        height: 120px;
+      }
 
       background-size: cover;
       background-repeat: no-repeat;
@@ -570,17 +629,33 @@ a {
     margin: 0 auto;
     padding: 92px 64px 64px 64px;
 
+    @media (max-width: 600px) {
+      padding: 48px 16px;
+    }
+
     > h2 {
       font-size: 4em;
       font-weight: bold;
       margin: 0 0 64px 0;
+
+      @media (max-width: 600px) {
+        font-size: 2em;
+      }
     }
 
     > .faqs {
       display: flex;
 
+      @media (max-width: 600px) {
+        display: block;
+      }
+
       > div {
         width: 50%;
+
+        @media (max-width: 600px) {
+          width: 100%;
+        }
 
         > div {
           font-size: 1.75em;
@@ -590,6 +665,10 @@ a {
           background-image: url("./icons/Ellipse 15.svg");
           background-repeat: no-repeat;
           background-position: 0 0.4em;
+
+          @media (max-width: 600px) {
+            font-size: 1.25em;
+          }
         }
       }
     }
@@ -603,10 +682,18 @@ a {
     padding: 92px 64px 92px 64px;
     text-align: center;
 
+    @media (max-width: 600px) {
+      padding: 48px 32px;
+    }
+
     > h2 {
       font-size: 2.7em;
       font-weight: bold;
       margin: 0 0 20px 0;
+
+      @media (max-width: 600px) {
+        font-size: 1.6em;
+      }
     }
 
     .logos {
@@ -670,6 +757,43 @@ a {
         width: 40px;
         background-image: url(./icons/gitcoin.png);
       }
+
+      @media (max-width: 600px) {
+        a {
+          margin-top: 16px;
+
+          &:not(:first-child) {
+            margin-left: 16px;
+          }
+        }
+
+        a[title="arweave"] {
+          width: 90px;
+        }
+        a[title="ChainIDE"] {
+          width: 90px;
+        }
+        a[title="gun"] {
+          width: 40px;
+        }
+        a[title="maker"] {
+          width: 80px;
+        }
+        a[title="web3bootcamp"] {
+          width: 50px;
+          height: 20px;
+        }
+        a[title="okb"] {
+          width: 23px;
+          height: 23px;
+        }
+        a[title="HashKey"] {
+          width: 55px;
+        }
+        a[title="Gitcoin"] {
+          width: 20px;
+        }
+      }
     }
   }
 }
@@ -687,15 +811,30 @@ a {
     background-repeat: no-repeat;
     background-position: top 32px right 16px;
 
+    @media (max-width: 600px) {
+      padding: 0 32px;
+      background-position: top 48px right 0px;
+      background-size: 20px;
+    }
+
     > .text {
       display: block;
       padding: 32px 72px;
       font-size: 1.5em;
+
+      @media (max-width: 600px) {
+        font-size: 1.1em;
+        padding: 32px 0px;
+      }
     }
 
     > .top {
       height: 100px;
       text-align: left;
+
+      @media (max-width: 600px) {
+        height: 50px;
+      }
 
       > .line {
         display: inline-block;
@@ -709,6 +848,10 @@ a {
     > .bottom {
       height: 100px;
       text-align: right;
+
+      @media (max-width: 600px) {
+        height: 50px;
+      }
 
       > .line {
         display: inline-block;
@@ -728,6 +871,10 @@ a {
     padding: 74px 0 58px 0;
     display: flex;
 
+    @media (max-width: 600px) {
+      display: block;
+    }
+
     > .main {
       flex: 1;
 
@@ -735,6 +882,10 @@ a {
         margin: 0;
         font-size: 1.6em;
         opacity: 0.5;
+
+        @media (max-width: 600px) {
+          font-size: 1.1em;
+        }
       }
 
       > section {

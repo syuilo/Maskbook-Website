@@ -509,47 +509,6 @@ a {
       }
     }
   }
-
-  .aspect {
-    width: 540px;
-    height: 250px;
-    align-items: center;
-    padding-left: 64px;
-    display: flex;
-
-    &-title {
-      width: 160px;
-      height: 160px;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-
-    &-description {
-      color: #5d6f88;
-      flex: 1;
-      font-size: 30px;
-      line-height: 37px;
-      padding-left: 32px;
-      width: 476px;
-    }
-  }
-
-  .aspect:nth-child(1) .aspect-title {
-    background-image: url(./icons/ability-1.svg);
-  }
-
-  .aspect:nth-child(2) .aspect-title {
-    background-image: url(./icons/ability-2.svg);
-  }
-
-  .aspect:nth-child(3) .aspect-title {
-    background-image: url(./icons/ability-3.svg);
-  }
-
-  .aspect:nth-child(4) .aspect-title {
-    background-image: url(./icons/ability-4.svg);
-  }
 }
 
 .meme-away {

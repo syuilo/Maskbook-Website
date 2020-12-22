@@ -84,33 +84,39 @@ a {
     display: none;
   }
 
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: #fff;
+
   > .body {
     display: flex;
     align-items: center;
     max-width: var(--width);
     margin: 0 auto;
+    padding: 32px 0;
 
     > *:last-child {
       margin-left: auto;
     }
 
+    > .logo {
+      > img {
+        display: block;
+      }
+    }
+
     > .toggler {
-      display: none;
+      display: block;
       border: none;
       outline: none;
-      background: transparent;
+      width: 32px;
+      height: 32px;
+      background: url(./icons/navbar-toggle-open.svg) no-repeat center;
+      background-size: 100% 100%;
 
-      &-icon {
-        display: block;
-
-        width: 24px;
-        height: 24px;
-
-        background: url(./icons/navbar-toggle-open.svg) no-repeat center;
-        background-size: 100% 100%;
-      }
-
-      &.open &-icon {
+      &.open {
         background-image: url(./icons/navbar-toggle-close.svg);
       }
     }
@@ -274,6 +280,7 @@ a {
     text-align: center;
     font-size: 9em;
     margin: 32px 0;
+    word-break: break-word;
 
     > *:nth-child(2) {
       margin: -0.1em 0 -0.3em 0;

@@ -281,6 +281,10 @@ a {
       width: 100%;
       max-width: 20em;
       margin: 0 auto;
+
+      @media (max-width: 600px) {
+        font-size: 1.75em;
+      }
     }
 
     .link-description {

@@ -33,6 +33,27 @@
   <script src="/scripts/jquery-3.4.1.min.js"></script>
   <script src="/scripts/main.js"></script>
 
+  <script>
+    window.onload = () => {
+      let navOpen = false;
+      const navToggle = document.getElementById('navToggle');
+      const navDrawer = document.getElementById('navDrawer');
+      const navBg = document.getElementById('navBg');
+      function toggle() {
+        navOpen = !navOpen;
+        if (navOpen) {
+          navToggle.classList.add('open');
+          navDrawer.classList.add('show');
+        } else {
+          navToggle.classList.remove('open');
+          navDrawer.classList.remove('show');
+        }
+      }
+      navToggle.addEventListener('click', toggle);
+      navBg.addEventListener('click', toggle);
+    }
+  </script>
+
   <!-- Google Tag Manager -->
   <script>
     (function (w, d, s, l, i) {
@@ -66,10 +87,25 @@
       <a class="logo">
         <img src="/assets/icons/Group 417.svg" width="140px" />
       </a>
-      <button class="toggler">
-        <span class="toggler-icon"></span>
-      </button>
+      <button class="toggler" id="navToggle"></button>
     </section>
+  </section>
+  <section class="navDrawer" id="navDrawer">
+    <div class="bg" id="navBg"></div>
+    <div class="body">
+      <nav class="nav">
+        <a target="_blank" href="https://github.com/DimensionDev/Maskbook">Source Code</a>
+        <a target="_blank" href="https://news.maskbook.com">News</a>
+        <a class="install" href="/install">Install</a>
+      </nav>
+      <div class="social">
+        <a href="https://www.facebook.com/groups/324857694838456" title="Facebook"></a>
+        <a href="https://twitter.com/realmaskbook" title="Twitter"></a>
+        <a href="https://github.com/DimensionDev" title="GitHub"></a>
+        <a href="https://t.me/maskbook_group#telegram" title="Telegram"></a>
+        <a href="https://discord.gg/4SVXvj7" title="Discord"></a>
+      </div>
+    </div>
   </section>
 
   <section class="install site-section collapsed">

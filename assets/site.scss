@@ -30,12 +30,7 @@ body {
 }
 
 a {
-  color: #121212;
   text-decoration: none;
-
-  &:visited {
-    color: #605f5f;
-  }
 }
 
 ._line {
@@ -109,15 +104,100 @@ a {
 
     > .toggler {
       display: block;
+      position: relative;
+      z-index: 1003;
       border: none;
       outline: none;
       width: 32px;
       height: 32px;
       background: url(./icons/navbar-toggle-open.svg) no-repeat center;
-      background-size: 100% 100%;
+      background-size: 24px;
 
       &.open {
         background-image: url(./icons/navbar-toggle-close.svg);
+      }
+    }
+  }
+}
+
+.navDrawer {
+  &.show {
+    > .bg {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    > .body {
+      left: 0;
+    }
+  }
+
+  > .bg {
+    position: fixed;
+    z-index: 1001;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+
+    transition: all 0.5s ease;
+  }
+
+  > .body {
+    position: fixed;
+    z-index: 1002;
+    top: 0;
+    left: -350px;
+    width: 350px;
+    height: 100vh;
+    text-align: center;
+    background: $theme-color;
+    color: #fff;
+
+    transition: all 0.5s ease;
+
+    > .nav {
+      font-size: 1.2em;
+      padding-top: 42px;
+
+      a {
+        display: block;
+        color: inherit;
+        padding: 12px;
+        margin: 24px auto;
+
+        &.install {
+          border: solid 2px rgba(255, 255, 255, 0.5);
+          border-radius: 6px;
+          width: 8em;
+          margin: 32px auto;
+        }
+      }
+    }
+
+    > .social {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      padding: 32px;
+
+      a {
+        display: block;
+        flex: 1;
+        width: 32px;
+        height: 32px;
+
+        @each $name in "facebook", "twitter", "github", "telegram", "discord" {
+          &[href*="#{$name}"] {
+            background-image: url("./icons/media-#{$name}.svg");
+            background-size: 100% 100%;
+          }
+        }
       }
     }
   }
@@ -931,6 +1011,11 @@ a {
         > a {
           display: block;
           margin: 32px 0;
+          color: #121212;
+
+          &:visited {
+            color: #605f5f;
+          }
         }
       }
     }
@@ -947,193 +1032,6 @@ a {
       padding: 48px;
       opacity: 0.5;
       font-size: 1.5em;
-    }
-  }
-}
-
-.principle {
-  text-align: center;
-  padding-top: 32px;
-  padding-bottom: 40px;
-
-  p {
-    margin: 0;
-    margin-top: 8px;
-  }
-}
-
-.recent-news {
-  .site-content-body {
-    padding-top: 32px;
-    padding-bottom: 64px;
-
-    text-align: center;
-    h3 {
-      font-size: 16px;
-      font-weight: normal;
-      line-height: 28px;
-
-      margin: 0;
-
-      color: #959393;
-    }
-    a[href] {
-      font-size: 24px;
-      font-weight: 500;
-      line-height: 34px;
-
-      display: block;
-
-      margin: 16px 0;
-
-      color: #3b3b3b;
-    }
-    time {
-      font-size: 14px;
-      font-weight: 300;
-      line-height: 1.75;
-      display: block;
-      color: #3b3b3b;
-    }
-  }
-}
-
-.misc {
-  .site-section-body {
-    display: flex;
-
-    padding-top: 64px;
-    padding-bottom: 64px;
-
-    border-top: 1px solid #eaeaea;
-  }
-
-  .description {
-    width: 230px;
-    margin: 0;
-
-    p {
-      margin-top: 0;
-    }
-  }
-
-  .about {
-    margin-left: 30px;
-
-    h4,
-    a {
-      font-size: 14px;
-      line-height: 1.75;
-
-      display: block;
-
-      margin: 0;
-
-      color: #3b3b3b;
-      &:not(:first-child) {
-        margin-top: 8px;
-      }
-    }
-  }
-
-  .subscribe {
-    display: flex;
-    align-items: flex-end;
-    flex: 1;
-    flex-direction: column;
-    h4 {
-      font-size: 16px;
-      font-weight: normal;
-      line-height: 28px;
-
-      margin: 0;
-      margin-bottom: 24px;
-
-      color: #3b3b3b;
-    }
-
-    form {
-      display: flex;
-
-      width: 285px;
-      height: 42px;
-
-      input[type="email"],
-      button[type="submit"] {
-        border: 1px solid #eaeaea;
-      }
-      input[type="email"] {
-        flex: 1;
-
-        padding: 9px 12px;
-
-        border-right: none;
-        border-top-left-radius: 3px;
-        border-bottom-left-radius: 3px;
-        outline: none;
-      }
-      button[type="submit"] {
-        width: 64px;
-        color: transparent;
-        border-color: #1c68f3;
-        border-radius: 0 2px 2px 0;
-        border-top-right-radius: 3px;
-        border-bottom-right-radius: 3px;
-        outline: none;
-        background: #1c68f3 url(./icons/btn-subscribe.svg) no-repeat center;
-        background-size: 100% 100%;
-      }
-    }
-
-    nav {
-      display: flex;
-      margin-top: 24px;
-      a {
-        display: block;
-
-        width: 24px;
-        height: 24px;
-
-        &:not(:first-child) {
-          margin-left: 32px;
-        }
-
-        @each $name in "facebook", "twitter", "github", "telegram", "discord" {
-          &[href*="#{$name}"] {
-            background-image: url("./icons/media-#{$name}.svg");
-            background-size: 100% 100%;
-          }
-        }
-      }
-    }
-  }
-}
-
-footer {
-  left: 0;
-  width: 100vw;
-  position: absolute;
-  padding: 32px 0;
-  border-top: 1px solid #eaeaea;
-
-  .description {
-    max-width: var(--width);
-    margin: 0 auto;
-  }
-
-  .content {
-    font-size: 14px;
-    line-height: 1.75;
-
-    display: flex;
-    justify-content: space-between;
-
-    color: #939393;
-    a {
-      color: #3b3b3b;
-      &:not(:first-child) {
-        margin-left: 16px;
-      }
     }
   }
 }

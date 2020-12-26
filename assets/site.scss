@@ -919,19 +919,24 @@ a {
     padding: 74px 0 58px 0;
     display: flex;
 
-    @media (max-width: 600px) {
+    @media (max-width: 920px) {
       display: block;
     }
 
     > .main {
       flex: 1;
+      padding-right: 32px;
+
+      @media (max-width: 920px) {
+        padding-right: 0;
+      }
 
       > p {
         margin: 0;
         font-size: 1.6em;
         opacity: 0.5;
 
-        @media (max-width: 600px) {
+        @media (max-width: 920px) {
           font-size: 1.1em;
         }
       }
@@ -944,7 +949,7 @@ a {
           font-size: 1.6em;
           opacity: 0.5;
 
-          @media (max-width: 600px) {
+          @media (max-width: 920px) {
             font-size: 1.2em;
           }
         }
@@ -1036,7 +1041,7 @@ a {
               }
             }
 
-            @media (max-width: 600px) {
+            @media (max-width: 920px) {
               width: 24px;
               height: 24px;
             }
@@ -1050,7 +1055,7 @@ a {
       font-size: 1.6em;
       opacity: 0.5;
 
-      @media (max-width: 600px) {
+      @media (max-width: 920px) {
         width: 100%;
         text-align: center;
         font-size: 1em;
@@ -1061,7 +1066,7 @@ a {
         > h4 {
           margin: 0;
 
-          @media (max-width: 600px) {
+          @media (max-width: 920px) {
             display: none;
           }
         }
@@ -1071,7 +1076,7 @@ a {
           margin: 32px 0;
           color: #121212;
 
-          @media (max-width: 600px) {
+          @media (max-width: 920px) {
             display: inline-block;
             margin: 8px 0 0 0;
 
@@ -1100,7 +1105,7 @@ a {
       opacity: 0.5;
       font-size: 1.5em;
 
-      @media (max-width: 600px) {
+      @media (max-width: 920px) {
         padding: 32px 0;
         font-size: 0.9em;
       }

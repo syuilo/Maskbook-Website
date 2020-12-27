@@ -372,6 +372,11 @@ a {
       font-size: 140%;
     }
 
+    > *:nth-child(3) {
+      color: transparent;
+      -webkit-text-stroke: 2px black;
+    }
+
     > *:nth-child(4) {
       font-size: 80%;
     }
